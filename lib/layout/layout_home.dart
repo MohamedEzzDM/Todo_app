@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:intl/intl.dart';
 import '../shared/components/components.dart';
 import '../shared/cubit/cubit.dart';
 import '../shared/cubit/states.dart';
@@ -33,12 +32,19 @@ class Home_layout extends StatelessWidget
           return Scaffold(
             key: scaffoldKey,
             appBar: AppBar(
+              backgroundColor: Colors.white,
+              elevation: 2.0,
               title: Text(
                 cubit.title[cubit.currentIndex],
+                style: TextStyle(
+                  color: Colors.black87
+                ),
+
               ),
             ),
             body: cubit.screens[cubit.currentIndex],
             floatingActionButton: FloatingActionButton(
+              backgroundColor: Colors.deepOrange,
               elevation: 20.0,
               onPressed: ()
               {
@@ -104,13 +110,7 @@ class Home_layout extends StatelessWidget
                                 label: 'Task Date',
                                 prefix: Icons.date_range_outlined,
                                 onTap: (){
-                                  showDatePicker(context: context,
-                                    initialDate: DateTime.now(),
-                                    firstDate: DateTime.now(),
-                                    lastDate: DateTime.parse('2021-11-30'),
-                                  ).then((value){
-                                    dateController.text = DateFormat?.yMMMd().format(value!).toString();
-                                  });
+
                                 },
                                 validate: (String? value){
                                   if(value!.isEmpty){
@@ -135,7 +135,11 @@ class Home_layout extends StatelessWidget
               ),
             ),
             bottomNavigationBar: BottomNavigationBar(
+              backgroundColor: Colors.white,
+              selectedItemColor: Colors.deepOrange,
+
               type: BottomNavigationBarType.fixed,
+
               currentIndex: cubit.currentIndex ,
               onTap: (index){
                 cubit.changeIndex(index);

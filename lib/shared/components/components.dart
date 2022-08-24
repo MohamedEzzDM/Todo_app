@@ -63,18 +63,11 @@ Widget buildTaskItem(Map model, context) => Dismissible(
   child:   Padding(
     padding: const EdgeInsets.all(20.0),
     child: Row(
+      crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        CircleAvatar(
-  
-          radius: 40.0,
-  
-          child: Text(
-  
-            '${model['time']}',
-  
-          ),
-  
-        ),
+        Icon(Icons.access_time_outlined,
+        size: 40,),
+
   
         SizedBox(
   
@@ -91,6 +84,8 @@ Widget buildTaskItem(Map model, context) => Dismissible(
             crossAxisAlignment: CrossAxisAlignment.start,
   
             children: [
+
+
   
               Text(
   
@@ -114,12 +109,25 @@ Widget buildTaskItem(Map model, context) => Dismissible(
   
                 style: TextStyle(
   
-                  color: Colors.grey,
+                  color: Colors.black54,
   
                 ),
   
   
   
+              ),
+              Text(
+
+                '${model['time']}',
+
+                style: TextStyle(
+
+                  color: Colors.grey,
+
+                ),
+
+
+
               ),
   
             ],
@@ -148,7 +156,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
   
               Icons.check_box,
   
-              color: Colors.green,
+              color: Colors.deepOrange,
   
             ),
   
@@ -168,7 +176,7 @@ Widget buildTaskItem(Map model, context) => Dismissible(
   
               Icons.archive_outlined,
   
-              color: Colors.black45,
+              color: Colors.red,
   
             ),
   

@@ -28,13 +28,8 @@ class NewTasks_Screen extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Icon(
-                Icons.menu,
-                size: 100,
-                color: Colors.grey,
-              ),
               Text(
-                'No tasks yet, please add some Tasks',
+                'Add some tasks!',
                 style: TextStyle(
                   fontSize: 16.0,
                   color: Colors.grey,
