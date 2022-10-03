@@ -1,7 +1,7 @@
 # Todo App UI
 
-A sample UI for todo app developed in flutter using 
-
+A sample UI for todo app developed in flutter
+## Using
 Bloc/cubit
 
 Sqflite
